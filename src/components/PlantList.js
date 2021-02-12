@@ -5,7 +5,7 @@ import axios from "axios";
 export default class PlantList extends Component {
   // add state with a property called "plants" - initialize as an empty array
 
-  state = { plant: [] }
+  state = { plants: [] }
 
   // when the component mounts:
   //   - fetch data from the server endpoint - http://localhost:3333/plants
@@ -17,7 +17,7 @@ export default class PlantList extends Component {
           .then(res => {
             console.log(res)
             this.setState({
-              plant: res.data.plantsData
+              plants: res.data.plantsData
             })
           })
           .catch(err => {
