@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import useForm from "../hooks/useForm"
 
 export default class PlantList extends Component {
   // add state with a property called "plants" - initialize as an empty array
@@ -15,7 +16,7 @@ export default class PlantList extends Component {
           .get("http://localhost:3333/plants")
           .then(res => {
             console.log(res)
-            this.state({
+            this.setState({
               plants: res.data.plantsData
             })
           })
@@ -23,7 +24,7 @@ export default class PlantList extends Component {
             console.log(err)
           })
   }
-  
+
   /*********  DON'T CHANGE ANYTHING IN THE RENDER FUNCTION *********/
   render() {
     return (
