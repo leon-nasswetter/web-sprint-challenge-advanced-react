@@ -8,7 +8,7 @@ const useForm = (initialValues) => {
         setValues({ ...values, [e.target.name]: e.target.value });
       };
 
-      return [values, setValues]
+      return [values, handleChanges]
 }
 
 export default useForm;
